@@ -14,6 +14,14 @@ class SantanderController: UIViewController {
     
     @IBOutlet weak var y1: UITextField! //primer numero
     
+    @IBOutlet weak var x2: UITextField! //segunda letra
+    
+    @IBOutlet weak var y2: UITextField! //segundo numero
+    
+    @IBOutlet weak var x3: UITextField! //tercera letra
+    
+    @IBOutlet weak var y3: UITextField! //tercer numero
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +35,18 @@ class SantanderController: UIViewController {
         
         let y1 = self.y1.text
         print("\(y1)")
+
+        let x2 = self.x2.text
+        print("\(x2)")
+        
+        let y2 = self.y2.text
+        print("\(y2)")
+        
+        let x3 = self.x3.text
+        print("\(x3)")
+        
+        let y3 = self.y3.text
+        print("\(y3)")
         
         
     }
