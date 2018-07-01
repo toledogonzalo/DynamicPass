@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LocalAuthentication
 
 class SantanderController: UIViewController {
 
@@ -51,10 +52,23 @@ class SantanderController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+  
         self.switchEstado.setOn(false, animated: true)
         self.switchSantander.setOn(true, animated: true)
         // Do any additional setup after loading the view.
     }
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
 
     @IBAction func calc(_ sender: Any) {
         var banco:String = ""
