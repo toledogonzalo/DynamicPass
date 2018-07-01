@@ -22,6 +22,13 @@ class SantanderController: UIViewController {
     
     @IBOutlet weak var y3: UITextField! //tercer numero
     
+    @IBOutlet weak var c1: UITextField! //primer resultado
+    
+    @IBOutlet weak var c2: UITextField! //segundo resultado
+    
+    @IBOutlet weak var c3: UITextField! //tercer resultado
+    
+    
     let model = cardModel()
     
     override func viewDidLoad() {
@@ -31,29 +38,27 @@ class SantanderController: UIViewController {
     }
 
     @IBAction func calc(_ sender: Any) {
-        let x1 = self.x1.text
-        print("\(x1 ?? "0")")
         
-        let y1 = self.y1.text
-        print("\(y1 ?? "0")")
-
-        let x2 = self.x2.text
-        print("\(x2 ?? "0")")
+        let x1 = self.model.LetterToNumber(Letter:self.x1.text!)
+        var y1 = Int(self.y1.text!)
+        y1 = y1! - 1
         
-        let y2 = self.y2.text
-        print("\(y2 ?? "0")")
+        print("Coordenada 1: \(x1), \(y1)")
+        let x2 = self.model.LetterToNumber(Letter:self.x2.text!)
+        var y2 = Int(self.y2.text!)
+        y2 = y2! - 1
+        let x3 = self.model.LetterToNumber(Letter:self.x3.text!)
+        var y3 = Int(self.y3.text!)
+        y3 = y3! - 1
         
-        let x3 = self.x3.text
-        print("\(x3 ?? "0")")
+        let c1 = self.model.getCoordValue(x:x1, y:y1!)
+        self.c1.text = String(c1)
         
-        let y3 = self.y3.text
-        print("\(y3 ?? "0")")
+        let c2 = self.model.getCoordValue(x:x2, y:y2!)
+        self.c2.text = String(c2)
         
-        
-        
-        let e = self.model.getCoordValue(option:1)
-        print("\(e)")
-        self.y3.text = String(e)
+        let c3 = self.model.getCoordValue(x:x3, y:y3!)
+        self.c3.text = String(c3)
         
  
     

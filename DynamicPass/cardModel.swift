@@ -13,12 +13,56 @@ class cardModel {
     private var r1:Int = 0
 
     init() {
-        self.anArray = [[37,20,22,44,88], [3,1,80,40,20,], [10,10,10,10,11]]
+        self.anArray =
+                        [[39,21,55,02,88],
+                        [77,8,80,40,20,2],
+                        [10,10,10,10,11],
+                        [10,10,10,10,11],
+                        [10,10,10,10,11]]
+        print(self.anArray)
     }
     
-    func getCoordValue(option:Int) -> Int {
-        r1 = self.anArray[0][0]
+    func getCoordValue(x:Int, y:Int) -> Int {
+        r1 = self.anArray[x][y]
         return r1
+    }
+    
+    func LetterToNumber(Letter:String) -> Int {
+        switch Letter {
+        case "A":
+            return 0
+            
+        case "B":
+            return 1
+
+        case "C":
+            return 2
+
+        case "D":
+            return 3
+
+        case "E":
+            return 4
+
+        case "F":
+            return 5
+
+        case "G":
+            return 6
+
+        case "H":
+            return 7
+
+        case "I":
+            return 8
+
+        case "J":
+            return 9
+
+            
+        default:
+            return 0
+        }
     }
 }
 
