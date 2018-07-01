@@ -28,12 +28,30 @@ class SantanderController: UIViewController {
     
     @IBOutlet weak var c3: UITextField! //tercer resultado
     
+    @IBOutlet weak var switchSantander: UISwitch!
+    
+    @IBOutlet weak var switchEstado: UISwitch!
+    
+    @IBAction func selectorSantander(_ sender: Any) {
+        if switchSantander.isOn {
+            self.switchEstado.setOn(false, animated: true)
+        }
+    }
+    
+    @IBAction func selectorEstado(_ sender: Any) {
+        if switchEstado.isOn {
+            self.switchSantander.setOn(false, animated: true)
+        }
+    }
+
+    
     
     let model = cardModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.switchEstado.setOn(false, animated: true)
+        self.switchSantander.setOn(true, animated: true)
         // Do any additional setup after loading the view.
     }
 
@@ -43,10 +61,11 @@ class SantanderController: UIViewController {
         var y1 = Int(self.y1.text!)
         y1 = y1! - 1
         
-        print("Coordenada 1: \(x1), \(y1)")
+      
         let x2 = self.model.LetterToNumber(Letter:self.x2.text!)
         var y2 = Int(self.y2.text!)
         y2 = y2! - 1
+        
         let x3 = self.model.LetterToNumber(Letter:self.x3.text!)
         var y3 = Int(self.y3.text!)
         y3 = y3! - 1

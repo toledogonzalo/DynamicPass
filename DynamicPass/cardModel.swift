@@ -9,21 +9,22 @@
 import Foundation
 
 class cardModel {
-    private var anArray:[[Int]]
+    private var santanderArray:[[Int]]
     private var r1:Int = 0
 
     init() {
-        self.anArray =
+        self.santanderArray =
                         [[39,21,55,02,88],
                         [77,8,80,40,20,2],
                         [10,10,10,10,11],
                         [10,10,10,10,11],
                         [10,10,10,10,11]]
-        print(self.anArray)
+        print(self.santanderArray)
     }
     
+    //pasar el parametro del segment control
     func getCoordValue(x:Int, y:Int) -> Int {
-        r1 = self.anArray[x][y]
+        r1 = self.santanderArray[x][y]
         return r1
     }
     
