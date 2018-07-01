@@ -10,6 +10,7 @@ import Foundation
 
 class cardModel {
     private var santanderArray:[[Int]]
+    private var estadoArray:[[Int]]
     private var r1:Int = 0
 
     init() {
@@ -20,11 +21,24 @@ class cardModel {
                         [10,10,10,10,11],
                         [10,10,10,10,11]]
         print(self.santanderArray)
+        
+        self.estadoArray =
+            [[23,41,67,62,11],
+             [77,8,80,40,20,2],
+             [10,10,10,10,11],
+             [10,10,10,10,11],
+             [10,10,10,10,11]]
+        print(self.estadoArray)
     }
     
     //pasar el parametro del segment control
-    func getCoordValue(x:Int, y:Int) -> Int {
-        r1 = self.santanderArray[x][y]
+    func getCoordValue(x:Int, y:Int, banco:String) -> Int {
+        if banco == "Santander" {
+            r1 = self.santanderArray[x][y]
+        }
+        else {
+            r1 = self.estadoArray[x][y]
+        }
         return r1
     }
     

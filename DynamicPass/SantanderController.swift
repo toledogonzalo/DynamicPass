@@ -32,6 +32,7 @@ class SantanderController: UIViewController {
     
     @IBOutlet weak var switchEstado: UISwitch!
     
+    
     @IBAction func selectorSantander(_ sender: Any) {
         if switchSantander.isOn {
             self.switchEstado.setOn(false, animated: true)
@@ -56,12 +57,19 @@ class SantanderController: UIViewController {
     }
 
     @IBAction func calc(_ sender: Any) {
+        var banco:String = ""
+        if self.switchSantander.isOn {
+            banco = "Santander"
+        }
+            else {
+             banco = "Estadp"
+            }
+        
         
         let x1 = self.model.LetterToNumber(Letter:self.x1.text!)
         var y1 = Int(self.y1.text!)
         y1 = y1! - 1
         
-      
         let x2 = self.model.LetterToNumber(Letter:self.x2.text!)
         var y2 = Int(self.y2.text!)
         y2 = y2! - 1
@@ -70,13 +78,13 @@ class SantanderController: UIViewController {
         var y3 = Int(self.y3.text!)
         y3 = y3! - 1
         
-        let c1 = self.model.getCoordValue(x:x1, y:y1!)
+        let c1 = self.model.getCoordValue(x:x1, y:y1!, banco: banco)
         self.c1.text = String(c1)
         
-        let c2 = self.model.getCoordValue(x:x2, y:y2!)
+        let c2 = self.model.getCoordValue(x:x2, y:y2!, banco: banco)
         self.c2.text = String(c2)
         
-        let c3 = self.model.getCoordValue(x:x3, y:y3!)
+        let c3 = self.model.getCoordValue(x:x3, y:y3!, banco: banco)
         self.c3.text = String(c3)
         
  
