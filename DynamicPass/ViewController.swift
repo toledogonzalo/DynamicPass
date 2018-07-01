@@ -157,7 +157,7 @@ class ViewController: UIViewController {
         
     }
     
-    /**
+    /**+++
      This method will push the authenticated view controller onto the UINavigationController stack
      */
     func navigateToAuthenticatedViewController(){
