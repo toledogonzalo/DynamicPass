@@ -32,6 +32,7 @@ class ViewController: UIViewController {
         guard authenticationContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
             
             showAlertViewIfNoBiometricSensorHasBeenDetected()
+            navigateToAuthenticatedViewController() //para pruebas en desktop
             return
             
         }
@@ -39,7 +40,7 @@ class ViewController: UIViewController {
         // 3. Check the fingerprint
         authenticationContext.evaluatePolicy(
             .deviceOwnerAuthenticationWithBiometrics,
-            localizedReason: "Only awesome people are allowed",
+            localizedReason: "Private Information",
             reply: { [unowned self] (success, error) -> Void in
                 
                 if( success ) {
